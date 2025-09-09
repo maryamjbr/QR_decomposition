@@ -39,7 +39,7 @@ Dataset reference: [EMNIST Letters](https://www.nist.gov/itl/products-and-servic
 
 ### 1. QR Decomposition for Classification
 - Each class `i` → training matrix `A_i` (size 784×200)  
-- Apply **Householder reflections** to compute `A_i = Q_i R_i`  
+- Apply **Householder reflections** to compute `$A_i = Q_i * R_i$`  
 - For a test vector `z`, solve least-squares problem:  
 
   \[
