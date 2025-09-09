@@ -39,7 +39,6 @@ Dataset reference: [EMNIST Letters](https://www.nist.gov/itl/products-and-servic
 
 ### 1. QR Decomposition for Classification
 
-```markdown
 - Each class *i* → training matrix **Aᵢ** (size 784 × 200)  
 - Apply **Householder reflections** to compute:  
 
