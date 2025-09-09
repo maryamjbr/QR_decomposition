@@ -39,18 +39,14 @@ Dataset reference: [EMNIST Letters](https://www.nist.gov/itl/products-and-servic
 
 ### 1. QR Decomposition for Classification
 - Each class `i` → training matrix `A_i` (size 784×200)  
-- Apply **Householder reflections** to compute `$A_i = Q_i * R_i$`  
-- For a test vector `z`, solve least-squares problem:  
+- Apply **Householder reflections** to compute `A_i = Q_i * R_i`  
+- For a test vector `z`, solve least-squares problem:
+- 
+    x = argmin_x || z - A_i x ||_2
 
-  \[
-  x = \arg\min_x \|z - A_i x\|_2
-  \]
+Residual:
 
-- Compute residuals:
-
-  \[
-  r_i = \|z - A_i x\|_2
-  \]
+    r_i = || z - A_i x ||_2
 
 - Predicted class = subspace with smallest residual.
 
