@@ -65,7 +65,6 @@ rᵢ = || z - Aᵢ x ||₂
 ```
 
 - Predicted class = subspace with the smallest residual.
-```
 
 ### 2. QR Updating with Givens Rotations
 - Instead of recomputing QR when new samples are added, use **Givens rotations** for efficient updates.  
