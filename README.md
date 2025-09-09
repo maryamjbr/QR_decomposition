@@ -41,12 +41,15 @@ Dataset reference: [EMNIST Letters](https://www.nist.gov/itl/products-and-servic
 - Each class `i` → training matrix `A_i` (size 784×200)  
 - Apply **Householder reflections** to compute `A_i = Q_i * R_i`  
 - For a test vector `z`, solve least-squares problem:
-- 
-    x = argmin_x || z - A_i x ||_2
+<p align="center">
+x = argmin<sub>x</sub> || z - A<sub>i</sub> x ||<sub>2</sub>
+</p>
 
 Residual:
 
-    r_i = || z - A_i x ||_2
+<p align="center">
+r<sub>i</sub> = || z - A<sub>i</sub> x ||<sub>2</sub>
+</p>
 
 - Predicted class = subspace with smallest residual.
 
