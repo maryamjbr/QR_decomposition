@@ -38,20 +38,35 @@ Dataset reference: [EMNIST Letters](https://www.nist.gov/itl/products-and-servic
 ## ⚙️ Methods
 
 ### 1. QR Decomposition for Classification
-- Each class `i` → training matrix `A_i` (size 784×200)  
-- Apply **Householder reflections** to compute `A_i = Q_i * R_i`  
-- For a test vector `z`, solve least-squares problem:
-<p align="center">
-x = argmin<sub>x</sub> || z - A<sub>i</sub> x ||<sub>2</sub>
-</p>
 
-Residual:
+```markdown
+- Each class *i* → training matrix **Aᵢ** (size 784 × 200)  
+- Apply **Householder reflections** to compute:  
 
-<p align="center">
-r<sub>i</sub> = || z - A<sub>i</sub> x ||<sub>2</sub>
-</p>
+```
 
-- Predicted class = subspace with smallest residual.
+Aᵢ = Qᵢ Rᵢ
+
+```
+
+- For a test vector *z*, solve the least-squares problem:  
+
+```
+
+x = argmin\_x || z - Aᵢ x ||₂
+
+```
+
+- Compute residuals:  
+
+```
+
+rᵢ = || z - Aᵢ x ||₂
+
+```
+
+- Predicted class = subspace with the smallest residual.
+```
 
 ### 2. QR Updating with Givens Rotations
 - Instead of recomputing QR when new samples are added, use **Givens rotations** for efficient updates.  
